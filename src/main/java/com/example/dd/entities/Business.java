@@ -16,10 +16,10 @@ public class Business {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "card")
     Card card;
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "appUser")
     AppUser appUser;
     String businessName;
@@ -28,6 +28,7 @@ public class Business {
     String businessPhoneNumber;
     @Column(unique = true)
     String businessEmail;
+    @Column(columnDefinition = "TEXT")
     String businessDescription;
     String websiteUrl;
 

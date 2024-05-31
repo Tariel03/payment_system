@@ -6,6 +6,9 @@ import com.example.dd.enums.Role;
 import com.example.dd.repos.AppUserRepository;
 import com.example.dd.repos.RegistrationService;
 import lombok.AllArgsConstructor;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -34,6 +37,16 @@ public class RegistrationServiceImpl implements RegistrationService {
                         .build();
         appUser.setRole(Role.USER);
         appUserRepository.save(appUser);
+    }
+
+
+    public AppUser currentUser (){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        UserDetails personDetails = (UserDetails) authentication.getPrincipal();
+        String username =  personDetails.getUsername();
+        Optional<AppUser> userOptional = appUserRepository.findByUsername(username);
+        return userOptional.orElse(null);
+
     }
 
     @Override
