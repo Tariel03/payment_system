@@ -25,7 +25,7 @@ public class Card {
     @NotNull
     String nameOwner;
     LocalDate expiration;
-    @Size(min =3, max = 3, message = "CCV must be 3")
+    @Size(min = 3, max = 3, message = "CCV must be 3")
     int cvc;
     @Enumerated(EnumType.STRING)
     CardType cardType;

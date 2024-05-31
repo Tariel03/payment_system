@@ -16,8 +16,6 @@ import java.time.LocalDate;
 public class TransactionRequest {
     String numberSender;
     LocalDate expirationDate;
-    @ManyToOne
-    @JoinColumn(name = "business")
-    Business business;
+
     Long sum;
 }
