@@ -28,7 +28,6 @@ public class Business {
     String businessPhoneNumber;
     @Column(unique = true)
     String businessEmail;
-    String businessCategory;
     String businessDescription;
     String websiteUrl;
 
