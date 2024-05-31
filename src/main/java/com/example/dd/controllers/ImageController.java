@@ -3,6 +3,7 @@ package com.example.dd.controllers;
 import com.example.dd.dto.request.ImageRequest;
 import com.example.dd.entities.Image;
 import com.example.dd.services.impl.ImageServiceImpl;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,7 @@ import java.util.Map;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/img")
+@Tag(name = "Image")
 public class ImageController {
     private final ImageServiceImpl imageService;
 

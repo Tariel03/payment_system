@@ -2,8 +2,6 @@ package com.example.dd.controllers;
 
 import com.example.dd.dto.request.UserRequest;
 import com.example.dd.dto.response.TokenResponse;
-import com.example.dd.entities.AppUser;
-import com.example.dd.security.AppUserDetailsService;
 import com.example.dd.security.RegistrationServiceImpl;
 import com.example.dd.services.impl.AppUserImpl;
 import com.example.dd.util.JwtUtil;
@@ -13,6 +11,7 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import org.springframework.context.MessageSource;
 import org.springframework.http.ResponseEntity;
@@ -26,6 +25,7 @@ import java.util.Map;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/auth")
+@Tag(name = "Authorization")
 public class AuthController {
     AppUserImpl userService;
     RegistrationServiceImpl registrationService;

@@ -1,14 +1,37 @@
 package com.example.dd.controllers;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.example.dd.dto.request.TransactionRequest;
+import com.example.dd.services.impl.AppUserImpl;
+import com.example.dd.services.repo.BusinessService;
+import com.example.dd.services.repo.TransactionService;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/main")
+@RequiredArgsConstructor
+@Tag(name = "Main")
 public class MainController {
-    @GetMapping
-    public String hello(){
-        return "hello";
+
+    final TransactionService transactionService;
+
+    final BusinessService businessService;
+
+    final AppUserImpl appUserService;
+
+    @PostMapping("/{sum}")
+    public ResponseEntity<?> hello(@PathVariable("sum") Long sum, @RequestBody TransactionRequest transactionRequest){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+        transactionRequest.setBusiness(businessService.findByAppUser(appUserService.findByUsername(userDetails.getUsername()).get()));
+        transactionRequest.setSum(sum);
+        transactionService.generate(transactionRequest);
+        return ResponseEntity.ok(transactionRequest);
     }
+
 }

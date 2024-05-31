@@ -2,6 +2,7 @@ package com.example.dd.services.impl;
 
 import com.example.dd.dto.request.BusinessRequest;
 import com.example.dd.dto.response.BusinessResponse;
+import com.example.dd.entities.AppUser;
 import com.example.dd.entities.Business;
 import com.example.dd.exceptions.NotFoundById;
 import com.example.dd.mappers.BusinessMapper;
@@ -16,6 +17,7 @@ import java.util.Optional;
 @Service
 @AllArgsConstructor
 public class BusinessServiceImpl implements BusinessService {
+
     BusinessRepository businessRepository;
     BusinessMapper businessMapper;
     RegistrationServiceImpl registrationService;
@@ -31,6 +33,11 @@ public class BusinessServiceImpl implements BusinessService {
     public void save(Business business) {
         businessRepository.save(business);
 
+    }
+
+    @Override
+    public Business findByAppUser(AppUser appUser) {
+        return businessRepository.findByAppUser(appUser);
     }
 
     @Override

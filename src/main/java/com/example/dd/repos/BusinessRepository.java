@@ -10,7 +10,8 @@ import java.util.Optional;
 
 @Repository
 public interface BusinessRepository extends JpaRepository<Business, Long> {
-    Optional<Business> findByBusinessEmail(String email);
-    Optional<Business>findByAppUser(AppUser user);
 
+    Optional<Business> findByBusinessEmail(String email);
+
+    Business findByAppUser(AppUser appUser);
 }

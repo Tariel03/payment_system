@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/business")
 @Tag(name = "Business")
 public class BusinessController {
+
     BusinessServiceImpl businessService;
     @PostMapping("/add")
     public ResponseEntity<?> addUser(@RequestBody BusinessRequest businessRequest){

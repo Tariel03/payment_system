@@ -5,6 +5,7 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
@@ -24,4 +25,11 @@ public class Transaction {
     @JoinColumn(name = "business")
     Business business;
     Long sum;
+
+    LocalDateTime createdAt;
+
+    @PrePersist
+    private void prePersist(){
+        createdAt = LocalDateTime.now();
+    }
 }

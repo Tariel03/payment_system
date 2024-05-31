@@ -9,15 +9,20 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 @Getter
 @Setter
 @AllArgsConstructor
 @Builder
 public class TransactionResponse {
+
+    Long id;
     String numberSender;
     LocalDate expirationDate;
     @ManyToOne
     @JoinColumn(name = "business")
     Business business;
     Long sum;
+    LocalDateTime createdAt;
 }
