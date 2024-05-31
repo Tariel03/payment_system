@@ -18,4 +18,5 @@ public class Business {
     String name;
     @OneToOne
     Card card;
+
 }
