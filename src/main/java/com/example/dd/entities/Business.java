@@ -24,9 +24,10 @@ public class Business {
     AppUser appUser;
     String businessName;
     String businessAddress;
+    @Column(unique = true)
     String businessPhoneNumber;
+    @Column(unique = true)
     String businessEmail;
-    String businessType;
     String businessCategory;
     String businessDescription;
     String websiteUrl;
