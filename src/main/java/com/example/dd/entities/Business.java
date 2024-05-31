@@ -1,6 +1,5 @@
 package com.example.dd.entities;
 
-import com.example.dd.enums.Role;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -12,19 +11,11 @@ import lombok.experimental.FieldDefaults;
 @Setter
 @RequiredArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class AppUser {
+public class Business {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
-    @Enumerated(EnumType.STRING)
-    Role role;
-    @Column(unique = true)
-    String username;
-    String password;
     String name;
-
-
-
-
-
+    @OneToOne
+    Card card;
 }
