@@ -17,7 +17,6 @@ import java.time.LocalDateTime;
 @Builder
 public class TransactionResponse {
 
-    Long id;
     String numberSender;
     LocalDate expirationDate;
     @ManyToOne
