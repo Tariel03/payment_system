@@ -10,6 +10,8 @@ import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @AllArgsConstructor
 @RequestMapping("/business")
@@ -20,6 +22,10 @@ public class BusinessController {
     public ResponseEntity<?> addUser(@RequestBody BusinessRequest businessRequest){
         businessService.save(businessRequest);
         return ResponseEntity.ok("Successfully added");
+    }
+    @GetMapping("/all")
+    public List<Business> findAll(){
+        return businessService.findAll();
     }
     @GetMapping("/{id}")
     public Business findById(@PathVariable Long id){

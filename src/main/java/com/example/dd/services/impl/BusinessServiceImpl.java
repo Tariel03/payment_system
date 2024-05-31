@@ -11,6 +11,7 @@ import com.example.dd.services.repo.BusinessService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -25,6 +26,9 @@ public class BusinessServiceImpl implements BusinessService {
         business.setAppUser(registrationService.currentUser());
         businessRepository.save(business);
 
+    }
+    public List<Business> findAll(){
+       return businessRepository.findAll();
     }
 
     @Override
