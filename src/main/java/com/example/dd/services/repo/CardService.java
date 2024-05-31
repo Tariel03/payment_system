@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface CardService {
     void save(CardRequest cardRequest);
+    void save(CardRequest cardRequest, Long id);
+
     CardResponse findById(Long id);
     CardResponse findByNumber(String number);
     List<CardResponse>findAll();
