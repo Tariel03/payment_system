@@ -1,9 +1,11 @@
 package com.example.dd.entities;
 
+import com.example.dd.enums.CardType;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 @Entity
@@ -25,7 +27,9 @@ public class Card {
     LocalDate expiration;
     @Size(min =3, max = 3, message = "CCV must be 3")
     int cvc;
-    String type;
+    @Enumerated(EnumType.STRING)
+    CardType cardType;
+
 
 
 

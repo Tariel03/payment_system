@@ -1,6 +1,7 @@
 package com.example.dd.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -15,8 +16,22 @@ public class Business {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
-    String name;
     @OneToOne
+    @JoinColumn(name = "card")
     Card card;
+    @OneToOne
+    @JoinColumn(name = "appUser")
+    AppUser appUser;
+    String businessName;
+    String businessAddress;
+    String businessPhoneNumber;
+    String businessEmail;
+    String businessType;
+    String businessCategory;
+    String businessDescription;
+    String websiteUrl;
+
+
+
 
 }
