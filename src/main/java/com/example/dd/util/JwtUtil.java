@@ -53,4 +53,17 @@ public class JwtUtil {
         jwt.getSubject();
         return jwt.getClaim("username").asString();
     }
+
+    public DecodedJWT decodeJWT(String token) {
+        Algorithm algorithm = Algorithm.HMAC256(secret);
+        JWTVerifier verifier = JWT.require(algorithm).build();
+        return verifier.verify(token);
+    }
+
+    public String extractUsername(String token) {
+        DecodedJWT decodedJWT = decodeJWT(token);
+        return decodedJWT.getSubject();
+    }
+
+
 }
