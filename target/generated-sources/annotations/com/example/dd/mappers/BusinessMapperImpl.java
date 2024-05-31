@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-06-01T00:22:24+0600",
-    comments = "version: 1.5.5.Final, compiler: javac, environment: Java 21.0.3 (Homebrew)"
+    date = "2024-06-01T02:20:15+0600",
+    comments = "version: 1.5.5.Final, compiler: javac, environment: Java 17.0.8 (JetBrains s.r.o.)"
 )
 @Component
 public class BusinessMapperImpl implements BusinessMapper {
@@ -41,7 +41,6 @@ public class BusinessMapperImpl implements BusinessMapper {
         }
 
         Business.BusinessBuilder business = Business.builder();
-
 
         return business.build();
     }
