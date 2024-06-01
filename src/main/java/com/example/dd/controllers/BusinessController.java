@@ -34,6 +34,12 @@ public class BusinessController {
         System.out.println(userDetails.getUsername());
         return businessService.findAll();
     }
+
+    @PostMapping("/string")
+    public String string(@RequestParam String s){
+        return s;
+    }
+
     @GetMapping("/{id}")
     public Business findById(@PathVariable Long id){
         return businessService.findRawById(id);
