@@ -1,12 +1,10 @@
 package com.example.dd.controllers;
 
+import com.example.dd.dto.response.TransactionResponse;
 import com.example.dd.entities.AppUser;
-import com.example.dd.entities.Transaction;
-import com.example.dd.security.AppUserDetailsService;
 import com.example.dd.services.impl.AppUserImpl;
 import com.example.dd.services.impl.BusinessServiceImpl;
 import com.example.dd.services.impl.TransactionServiceImpl;
-import com.example.dd.services.repo.AppUserService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,7 +25,7 @@ public class AdminController {
     }
 
     @GetMapping("/transactions")
-    public List<Transaction> transactions(){
+    public List<TransactionResponse> transactions(){
         return transactionService.findAll();
     }
 

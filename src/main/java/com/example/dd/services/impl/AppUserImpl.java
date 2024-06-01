@@ -2,7 +2,6 @@ package com.example.dd.services.impl;
 
 import com.example.dd.entities.AppUser;
 import com.example.dd.exceptions.NotFoundById;
-import com.example.dd.exceptions.NotFoundByUserNameException;
 import com.example.dd.repos.AppUserRepository;
 import com.example.dd.services.repo.AppUserService;
 import lombok.RequiredArgsConstructor;
@@ -14,6 +13,7 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 public class AppUserImpl implements AppUserService {
+
     private final AppUserRepository appUserRepository;
 
     @Override
