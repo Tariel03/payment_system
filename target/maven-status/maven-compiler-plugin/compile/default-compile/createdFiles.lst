@@ -26,6 +26,7 @@ com\example\dd\config\CloudStorageConfig.class
 com\example\dd\controllers\AuthController.class
 com\example\dd\exceptions\CloudStorageException.class
 com\example\dd\util\JwtUtil.class
+com\example\dd\enums\Status.class
 com\example\dd\controllers\CardController.class
 com\example\dd\entities\Image$ImageBuilder.class
 com\example\dd\services\repo\AppUserService.class
@@ -52,8 +53,10 @@ com\example\dd\services\repo\TransactionService.class
 com\example\dd\entities\BaseEntity.class
 com\example\dd\services\impl\TransactionServiceImpl.class
 com\example\dd\mappers\TransactionMapper.class
+com\example\dd\entities\Review.class
 com\example\dd\entities\Card.class
 com\example\dd\security\AppUserDetailsService.class
+com\example\dd\entities\Review$ReviewBuilder.class
 com\example\dd\entities\AppUser$AppUserBuilder.class
 com\example\dd\entities\Transaction$TransactionBuilder.class
 com\example\dd\config\SecurityConfig.class

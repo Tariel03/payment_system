@@ -25,9 +25,11 @@ C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\entities\BaseEntit
 C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\entities\Business.java
 C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\entities\Card.java
 C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\entities\Image.java
+C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\entities\Review.java
 C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\entities\Transaction.java
 C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\enums\CardType.java
 C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\enums\Role.java
+C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\enums\Status.java
 C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\exceptions\CloudStorageException.java
 C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\exceptions\NotFoundById.java
 C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\exceptions\NotFoundByUserNameException.java
