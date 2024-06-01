@@ -1,6 +1,7 @@
 package com.example.dd.dto.response;
 
 import com.example.dd.entities.Business;
+import com.example.dd.enums.Status;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
@@ -23,5 +24,6 @@ public class TransactionResponse {
     @JoinColumn(name = "business")
     Business business;
     Long sum;
+    Status status;
     LocalDateTime createdAt;
 }

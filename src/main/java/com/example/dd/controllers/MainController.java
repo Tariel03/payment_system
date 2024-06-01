@@ -1,6 +1,7 @@
 package com.example.dd.controllers;
 
 import com.example.dd.dto.request.TransactionRequest;
+import com.example.dd.entities.Transaction;
 import com.example.dd.services.impl.AppUserImpl;
 import com.example.dd.services.repo.BusinessService;
 import com.example.dd.services.repo.TransactionService;
@@ -25,13 +26,18 @@ public class MainController {
     final AppUserImpl appUserService;
 
     @PostMapping("/{sum}")
-    public ResponseEntity<?> hello(@PathVariable("sum") Long sum, @RequestBody TransactionRequest transactionRequest){
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-        transactionRequest.setBusiness(businessService.findByAppUser(appUserService.findByUsername(userDetails.getUsername()).get()));
-        transactionRequest.setSum(sum);
-        transactionService.generate(transactionRequest);
-        return ResponseEntity.ok(transactionRequest);
+    public ResponseEntity<?> hello(@PathVariable("sum") Long sum){
+        transactionService.generate(TransactionRequest.builder().sum(sum).build());
+        return ResponseEntity.ok("Transaction saved !");
     }
+
+//    @PostMapping()
+//    public {
+//        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+//        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+//        transactionRequest.setBusiness(businessService.findByAppUser(appUserService.findByUsername(userDetails.getUsername()).get()));
+//        transactionRequest.setSum(sum);
+//        transactionService.generate(transactionRequest);
+//    }
 
 }
