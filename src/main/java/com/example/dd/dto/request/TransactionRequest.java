@@ -14,6 +14,9 @@ import java.time.LocalDate;
 @Builder
 public class TransactionRequest {
 
+    @JsonIgnore
+    Long id;
+
     String numberSender;
 
     LocalDate expirationDate;

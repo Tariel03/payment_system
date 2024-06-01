@@ -13,10 +13,12 @@ C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\DdApplication.java
 C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\dto\request\BusinessRequest.java
 C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\dto\request\CardRequest.java
 C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\dto\request\ImageRequest.java
+C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\dto\request\ReviewRequest.java
 C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\dto\request\TransactionRequest.java
 C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\dto\request\UserRequest.java
 C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\dto\response\BusinessResponse.java
 C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\dto\response\CardResponse.java
+C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\dto\response\ReviewResponse.java
 C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\dto\response\TokenResponse.java
 C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\dto\response\TransactionResponse.java
 C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\dto\response\UserResponse.java
@@ -42,6 +44,7 @@ C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\repos\BusinessRepo
 C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\repos\CardRepository.java
 C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\repos\ImageRepository.java
 C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\repos\RegistrationService.java
+C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\repos\ReviewRepository.java
 C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\repos\TransactionRepository.java
 C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\security\AppUserDetails.java
 C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\security\AppUserDetailsService.java
@@ -52,11 +55,13 @@ C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\services\impl\Busi
 C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\services\impl\CardServiceImpl.java
 C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\services\impl\CloudinaryServiceImpl.java
 C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\services\impl\ImageServiceImpl.java
+C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\services\impl\ReviewServiceImpl.java
 C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\services\impl\TransactionServiceImpl.java
 C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\services\repo\AppUserService.java
 C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\services\repo\BusinessService.java
 C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\services\repo\CardService.java
 C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\services\repo\CloudinaryService.java
 C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\services\repo\ImageService.java
+C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\services\repo\ReviewService.java
 C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\services\repo\TransactionService.java
 C:\Users\Akylbek\IdeaProjects\dd\src\main\java\com\example\dd\util\JwtUtil.java

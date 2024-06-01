@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import java.time.LocalDateTime;
+
 @Entity
 @AllArgsConstructor
 @Builder
@@ -21,13 +23,16 @@ public class Review {
 
     String description;
 
-
+    LocalDateTime writtenTime;
 
     @ManyToOne
     @JoinColumn(name = "appuser")
     AppUser appUser;
 
-
+    @PrePersist
+    private void prePersist() {
+        writtenTime = LocalDateTime.now();
+    }
 
 
 }

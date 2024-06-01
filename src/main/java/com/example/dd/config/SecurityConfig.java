@@ -36,7 +36,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(
                         request -> request.requestMatchers("/auth/***", "/swagger-ui/***", "/v3/api-docs/**", "/img/**", "/image/save-image")
                                 .permitAll()
-                        .anyRequest().authenticated())
+                        .anyRequest().permitAll())
                 .sessionManagement(manager -> manager.sessionCreationPolicy(STATELESS))
                 .authenticationProvider(
                         authenticationProvider()).addFilterBefore(

@@ -13,6 +13,10 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 @RestController
 @RequestMapping("/main")
 @RequiredArgsConstructor
@@ -25,19 +29,28 @@ public class MainController {
 
     final AppUserImpl appUserService;
 
+    private final List<Long> longList = new ArrayList<>();
+
     @PostMapping("/{sum}")
-    public ResponseEntity<?> hello(@PathVariable("sum") Long sum){
-        transactionService.generate(TransactionRequest.builder().sum(sum).build());
-        return ResponseEntity.ok("Transaction saved !");
+    public ResponseEntity<?> hello(@PathVariable("sum") Long sum) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+        Long id = transactionService.generate(TransactionRequest.builder()
+                .sum(sum)
+                .business(businessService.findByAppUser(appUserService.findByUsername(userDetails.getUsername()).get()))
+                .build());
+        longList.add(id);
+        System.out.println(longList);
+        return ResponseEntity.ok("Transaction pending !");
     }
 
-//    @PostMapping()
-//    public {
-//        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-//        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-//        transactionRequest.setBusiness(businessService.findByAppUser(appUserService.findByUsername(userDetails.getUsername()).get()));
-//        transactionRequest.setSum(sum);
-//        transactionService.generate(transactionRequest);
-//    }
+    @PostMapping("/add")
+    public ResponseEntity<?> hello(TransactionRequest transactionRequest){
+        Collections.sort(longList);
+        transactionRequest.setId(longList.get(0));
+        transactionService.save(transactionRequest);
+        longList.remove(0);
+        return ResponseEntity.ok("Transaction saved");
+    }
 
 }

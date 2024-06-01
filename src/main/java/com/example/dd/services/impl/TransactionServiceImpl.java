@@ -29,9 +29,17 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     @Override
-    public void generate(TransactionRequest request) {
-        repository.save(TransactionMapper.mapper.toEntity(request));
-
+    public Long generate(TransactionRequest request) {
+        return repository.save(TransactionMapper.mapper.toEntity(request)).getId();
     }
+
+    @Override
+    public void save(TransactionRequest request) {
+        Transaction transaction = repository.findById(request.getId()).orElse(null);
+        transaction.setNumberSender(request.getNumberSender());
+        transaction.setExpirationDate(request.getExpirationDate());
+        repository.save(transaction);
+    }
+
 
 }

@@ -1,14 +1,17 @@
 com\example\dd\mappers\BusinessMapper.class
 com\example\dd\exceptions\WrongCardType.class
 com\example\dd\controllers\AdminController.class
+com\example\dd\dto\response\ReviewResponse.class
 com\example\dd\security\JwtFilter.class
 com\example\dd\enums\Role.class
 com\example\dd\exceptions\NotFoundByUserNameException.class
+com\example\dd\services\repo\ReviewService.class
 com\example\dd\dto\request\BusinessRequest.class
 com\example\dd\entities\Business$BusinessBuilder.class
 com\example\dd\services\repo\BusinessService.class
 com\example\dd\repos\RegistrationService.class
 com\example\dd\entities\AppUser.class
+com\example\dd\dto\request\ReviewRequest$ReviewRequestBuilder.class
 com\example\dd\entities\Transaction.class
 com\example\dd\enums\CardType.class
 com\example\dd\controllers\MainController.class
@@ -35,6 +38,7 @@ com\example\dd\dto\request\TransactionRequest.class
 com\example\dd\entities\Image.class
 com\example\dd\services\impl\AppUserImpl.class
 com\example\dd\services\impl\CloudinaryServiceImpl.class
+com\example\dd\dto\request\ReviewRequest.class
 com\example\dd\mappers\AppUserMapper.class
 com\example\dd\controllers\TransactionController.class
 com\example\dd\services\repo\CloudinaryService.class
@@ -44,6 +48,8 @@ com\example\dd\advice\GlobalExceptionHandler.class
 com\example\dd\security\RegistrationServiceImpl.class
 com\example\dd\dto\response\CardResponse$CardResponseBuilder.class
 com\example\dd\mappers\BusinessMapperImpl.class
+com\example\dd\repos\ReviewRepository.class
+com\example\dd\services\impl\ReviewServiceImpl.class
 com\example\dd\dto\response\TransactionResponse.class
 com\example\dd\dto\request\UserRequest.class
 com\example\dd\dto\response\TransactionResponse$TransactionResponseBuilder.class

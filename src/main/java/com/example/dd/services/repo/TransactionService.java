@@ -12,6 +12,8 @@ public interface TransactionService {
 
     List<TransactionResponse> findAll();
 
-    void generate(TransactionRequest request);
+    Long generate(TransactionRequest request);
+
+    void save(TransactionRequest request);
 
 }
